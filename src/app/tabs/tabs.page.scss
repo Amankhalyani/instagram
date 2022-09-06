@@ -3,6 +3,8 @@ ion-tab-bar {
     height: 60px;
     padding: 0 12px;
     justify-content: space-between;
+    background: #fff;
+    --background: #fff;
     ion-tab-button {
         max-width: 62px;
         --ripple-color: #000;
