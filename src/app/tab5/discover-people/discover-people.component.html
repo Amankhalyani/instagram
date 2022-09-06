@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Discover People</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content">
+    <ion-label>Top Suggestions</ion-label>
+    <div class="d-flex align-items-center justify-content-between flex-wrap">
+      <div class="discover-card" *ngFor="let card of discoverPeople; let i = index">
+        <ion-icon class="detele-card c-pointer" name="close" (click)="removeCard(i)"></ion-icon>
+        <div class="dpeople-img">
+          <ion-img src="{{card.idImg}}"></ion-img>
+        </div>        
+        <ion-text>{{card.peopleName}}</ion-text>
+        <span>Follow You</span>
+        <ion-button>Follow</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

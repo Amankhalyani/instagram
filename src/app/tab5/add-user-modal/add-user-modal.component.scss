@@ -1,0 +1,33 @@
+ion-content {
+    --overflow: hidden;
+}
+.content {
+    height: 100%;
+    padding: 10px;
+    .heandler {
+        width: 40px;
+        height: 4px;
+        display: block;
+        background-color: #ccc;
+        margin: 0 auto 15px;
+        border-radius: 5px;
+    }
+    .profile-img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #FFF;
+        border: 1px solid #000;
+        overflow: hidden;
+        margin-right: 12px;
+        ion-icon {
+            font-size: 32px;
+        }
+    }
+    .userName {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+        display: block;
+    }
+}

@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <div class="searchbar-container">
+    <ion-searchbar></ion-searchbar>
+  </div>
+  <div class="content">
+    <div class="searchPost-container d-flex flex-wrap">
+      <div class="search-box" *ngFor="let item of postList" (click)="openSearchModal(item.postImg)">
+        <ion-img src="{{item.postImg}}"></ion-img>
+      </div>
+    </div>
+  </div>
+</ion-content>

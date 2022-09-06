@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="content">
+    <span class="heandler"></span>
+
+    <div class="new-container" *ngIf="type === 'menu'">
+      <div class="d-flex align-items-center ion-activatable centered px-3 c-pointer" *ngFor="let data of menulist" (click)="close(data.list)">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <ion-icon name="{{data.icon}}" class="mr-3"></ion-icon>
+        <ion-label>{{data.list}}</ion-label>
+      </div>
+    </div>
+
+    <div class="new-container" *ngIf="type === 'creatNew'">
+      <div class="d-flex align-items-center ion-activatable centered px-3 c-pointer" *ngFor="let data of creatNew" (click)="close(data.list)">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <ion-icon name="{{data.icon}}" class="mr-3"></ion-icon>
+        <ion-label class="creat-item">{{data.list}}</ion-label>
+      </div>
+    </div>
+
+    <div class="new-container" *ngIf="type === 'about'">
+      <div class="d-flex align-items-center ion-activatable centered px-3 c-pointer" *ngFor="let data of postAbout" (click)="close(data.list)">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <ion-label class="about-item">{{data.list}}</ion-label>
+      </div>
+    </div>
+
+  </div>
+</ion-content> 

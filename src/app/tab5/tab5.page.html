@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <div class="header d-flex align-items-center justify-content-between">
+    <div (click)="addUserModal()">
+      <h3 class="d-flex align-items-center">
+        aman.khalyani.54
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </h3>
+    </div>
+    <div class="d-flex align-items-center">
+      <div class="add-btn d-flex align-items-center justify-content-center" (click)="goToMenu('creatNew')">
+        <ion-icon name="add"></ion-icon>    
+      </div>
+      <div class="menu-icon d-flex align-items-center" (click)="goToMenu('menu')">
+        <ion-icon name="menu-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="profile-container">
+    <div class="d-flex align-items-center">
+      <div class="profile-img">
+        <ion-img src="assets/image/aman-img.jpg"></ion-img>
+      </div>
+      <div class="d-flex align-content-center">
+        <div class="profile-info" *ngFor="let label of profileInfo">
+          <span class="info-count">{{label.number}}</span>
+          <span class="info-name">{{label.infoName}}</span>
+        </div>
+      </div>
+    </div>
+    <ion-label class="userName">Aman Khalyani</ion-label>
+    <ion-label class="mobileNumber">Mobile No : 9106443366</ion-label>
+  </div>
+  <div class="btns">
+    <ion-button class="edit-btn" fill='outline'>Edit Profile</ion-button>
+    <ion-button class="discover-btn" fill='outline' id="discover" (click)="onClickDiscover()">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </ion-button>
+  </div>
+  <div id="discoverPeople">
+    <div class="seeDiscover d-flex align-content-center justify-content-between">
+      <ion-label class="d-label">Discover People</ion-label>
+      <ion-label class="c-pointer" (click)="gotoDiscoverPeople()">See All</ion-label>
+    </div>
+    <div class="dpeople-container d-flex align-content-center">
+      <div class="discover-card" *ngFor="let card of discoverPeople; let i = index">
+        <ion-icon class="detele-card c-pointer" name="close" (click)="removeCard(i)"></ion-icon>
+        <div class="dpeople-img">
+          <ion-img src="{{card.idImg}}"></ion-img>
+        </div>        
+        <ion-text>{{card.peopleName}}</ion-text>
+        <span>Follow You</span>
+        <ion-button>Follow</ion-button>
+      </div>
+    </div>
+  </div>
+  <div class="story-highlight c-pointer d-flex align-content-center justify-content-between" id="story" (click)="onClickstory()">
+    <ion-text>Story Highlights</ion-text>
+    <ion-icon name="chevron-down-outline"></ion-icon>
+  </div>
+  <div id="storyHighlight">
+    <span>Keep your favorite stories on your profile</span>
+    <div class="storyHighlight-container d-flex align-content-center">
+      <div class="text-center">
+        <div class="story-img new-story">
+          <ion-icon name="add"></ion-icon>
+        </div>
+        <ion-text>New</ion-text>
+      </div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+      <div class="story-img"></div>
+    </div>
+  </div>
+  <div class="mt-1">
+    <ion-segment (ionChange)="tabChanged($event)" [(ngModel)]="segmentValue" mode="md">
+      <ion-segment-button class="deliverSegment" value="post">
+        <ion-icon name="apps-sharp"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="peoplePost">
+        <ion-icon name="at-circle"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+    <div *ngIf="segmentValue == 'post'">
+      <div class="post-container d-flex flex-wrap">
+        <div class="post-box" *ngFor="let item of postList" (click)="openSearchModal(item.postImg)">
+          <ion-img src="{{item.postImg}}"></ion-img>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="segmentValue == 'peoplePost'">
+      <div class="post-container d-flex flex-wrap">
+        <div class="post-box" *ngFor="let item of peoplePostList" (click)="openSearchModal(item.postImg)">
+          <ion-img src="{{item.postImg}}"></ion-img>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

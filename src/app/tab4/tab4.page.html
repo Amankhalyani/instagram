@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <div class="header">
+    <h3>Activity</h3>
+  </div>
+</ion-header>
+<ion-content>
+  <div class="content">
+    <div class="activity">
+      <ion-label class="activity-label">Today</ion-label>
+      <div class="activity-box d-flex align-items-center" *ngFor="let data of activityData">
+        <div class="box-left d-flex align-items-center">
+          <div class="profile-img">
+            <ion-img src="{{data.idImg}}"></ion-img>
+          </div>
+          <div class="box-info">
+            <span class="peopleName">{{data.peopleName}}</span>
+            <span class="text">{{data.text}}</span>
+            <span class="hashTag" *ngIf="data.hashTag">{{data.hashTag}}</span>
+            <span class="time">2h</span>
+          </div>
+        </div>
+        <div class="box-img" *ngIf="data.dataImg">
+          <ion-img src="{{data.dataImg}}"></ion-img>
+        </div>
+        <ion-button class="box-btn follow-btn" *ngIf="data.Follow">Follow</ion-button>
+        <ion-button fill="outline" class="box-btn following-btn" *ngIf="data.Following">Following</ion-button>
+      </div>
+    </div>
+    <div class="activity">
+      <ion-label class="activity-label">Yesterday</ion-label>
+      <div class="activity-box d-flex align-items-center" *ngFor="let data of activityData">
+        <div class="box-left d-flex align-items-center">
+          <div class="profile-img">
+            <ion-img src="{{data.idImg}}"></ion-img>
+          </div>
+          <div class="box-info">
+            <span class="peopleName">{{data.peopleName}}</span>
+            <span class="text">{{data.text}}</span>
+            <span class="hashTag" *ngIf="data.hashTag">{{data.hashTag}}</span>
+            <span class="time">14h</span>
+          </div>
+        </div>
+        <div class="box-img" *ngIf="data.dataImg">
+          <ion-img src="{{data.dataImg}}"></ion-img>
+        </div>
+        <ion-button class="box-btn follow-btn" *ngIf="data.Follow">Follow</ion-button>
+        <ion-button fill="outline" class="box-btn following-btn" *ngIf="data.Following">Following</ion-button>
+      </div>
+    </div>
+    <div class="activity">
+      <ion-label class="activity-label">This Week</ion-label>
+      <div class="activity-box d-flex align-items-center" *ngFor="let data of activityData">
+        <div class="box-left d-flex align-items-center">
+          <div class="profile-img">
+            <ion-img src="{{data.idImg}}"></ion-img>
+          </div>
+          <div class="box-info">
+            <span class="peopleName">{{data.peopleName}}</span>
+            <span class="text">{{data.text}}</span>
+            <span class="hashTag" *ngIf="data.hashTag">{{data.hashTag}}</span>
+            <span class="time">5d</span>
+          </div>
+        </div>
+        <div class="box-img" *ngIf="data.dataImg">
+          <ion-img src="{{data.dataImg}}"></ion-img>
+        </div>
+        <ion-button class="box-btn follow-btn" *ngIf="data.Follow">Follow</ion-button>
+        <ion-button fill="outline" class="box-btn following-btn" *ngIf="data.Following">Following</ion-button>
+      </div>
+    </div>
+    <div class="activity">
+      <ion-label class="activity-label">This Month</ion-label>
+      <div class="activity-box d-flex align-items-center" *ngFor="let data of activityData">
+        <div class="box-left d-flex align-items-center">
+          <div class="profile-img">
+            <ion-img src="{{data.idImg}}"></ion-img>
+          </div>
+          <div class="box-info">
+            <span class="peopleName">{{data.peopleName}}</span>
+            <span class="text">{{data.text}}</span>
+            <span class="hashTag" *ngIf="data.hashTag">{{data.hashTag}}</span>
+            <span class="time">3w</span>
+          </div>
+        </div>
+        <div class="box-img" *ngIf="data.dataImg">
+          <ion-img src="{{data.dataImg}}"></ion-img>
+        </div>
+        <ion-button class="box-btn follow-btn" *ngIf="data.Follow">Follow</ion-button>
+        <ion-button fill="outline" class="box-btn following-btn" *ngIf="data.Following">Following</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
