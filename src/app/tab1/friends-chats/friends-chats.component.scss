@@ -10,6 +10,16 @@
     }
 }
 
+ion-header {
+    --background: #fff;
+    h3 {
+        color: #000;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+    }
+}
+
 .content {
     padding: 6px 0;
     .chat-box {
