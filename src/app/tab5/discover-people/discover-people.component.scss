@@ -1,5 +1,8 @@
 ion-header {
-    --background: #fff;
+    --background: #fff !important;
+    ion-toolbar {
+        --background: #fff !important;
+    }
 }
 
 .content {
